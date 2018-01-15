@@ -20,12 +20,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class Sliding extends AppCompatActivity {
+    Intent i;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-
-    Intent i;
-
     // nav drawer title
     private CharSequence mDrawerTitle;
 
@@ -69,6 +67,7 @@ public class Sliding extends AppCompatActivity {
         // enabling action bar app icon and behaving it as toggle button
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        h
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.drawer);
 
@@ -95,19 +94,6 @@ public class Sliding extends AppCompatActivity {
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             displayView(0);
-        }
-    }
-
-    /**
-     * Slide menu item click listener
-     */
-    private class SlideMenuClickListener implements
-            ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position,
-                                long id) {
-            // display view for selected nav drawer item
-            displayView(position);
         }
     }
 
@@ -201,6 +187,19 @@ public class Sliding extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    /**
+     * Slide menu item click listener
+     */
+    private class SlideMenuClickListener implements
+            ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            // display view for selected nav drawer item
+            displayView(position);
+        }
     }
 
 }
