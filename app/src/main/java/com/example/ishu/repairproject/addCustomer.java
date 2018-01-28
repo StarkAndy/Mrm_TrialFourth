@@ -1,13 +1,19 @@
 package com.example.ishu.repairproject;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class addCustomer extends AppCompatActivity {
+public class addCustomer extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_customer);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState)
+    {
+        final View rootView = inflater.inflate(R.layout.activity_add_customer, container, false);
+        return rootView;
     }
 }
